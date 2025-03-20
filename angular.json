@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "web-site": {
+    "front": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/web-site",
+            "outputPath": "dist/front",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,9 +25,25 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/bootstrap/css/bootstrap.css",
+              "src/assets/swiper/swiper-bundle.min.css",
+              "src/assets/style.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/app.js",
+              "src/assets/js/jquery.easing.js",
+              "src/assets/js/jquery.magnific-popup.min.js",
+              "src/assets/js/swiper-bundle.min.js",
+              "src/assets/js/swiper.js",
+              "src/assets/js/animated.js",
+              "src/assets/js/countto.js",
+              "src/assets/js/plugin.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -62,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "web-site:build:production"
+              "buildTarget": "front:build:production"
             },
             "development": {
-              "buildTarget": "web-site:build:development"
+              "buildTarget": "front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "web-site:build"
+            "buildTarget": "front:build"
           }
         },
         "test": {
@@ -96,5 +112,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ffa086b0-e9a4-41f8-82f9-03eb5114a60c"
   }
 }
