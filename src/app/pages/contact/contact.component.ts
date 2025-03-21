@@ -12,7 +12,9 @@ export class ContactComponent {
   contact = {
     name: '',
     email: '',
-    message: ''
+    message: '',
+    address: '',
+    phone:''
   };
 
   onSubmit() {

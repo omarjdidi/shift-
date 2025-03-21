@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card shadow-lg p-4 rounded" style="width: 400px;">
+      <form [formGroup]="registerForm" (ngSubmit)="createAccount()">
+        <p class="text-center">Sign up with:</p>
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Name" formControlName="name" />
+          <div *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched" class="text-danger">
+            Name is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Username" formControlName="username" />
+          <div *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched" class="text-danger">
+            Username is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="Email" formControlName="email" />
+          <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="text-danger">
+            Enter a valid email.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <input type="password" class="form-control" placeholder="Password" formControlName="password" />
+          <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="text-danger">
+            Password must be at least 6 characters.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <input type="password" class="form-control" placeholder="Repeat Password" formControlName="repeatpassword" />
+          <div *ngIf="registerForm.controls['repeatpassword'].invalid && registerForm.controls['repeatpassword'].touched" class="text-danger">
+            Please confirm your password.
+          </div>
+        </div>
+  
+        <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid">Sign up</button>
+      </form>
+    </div>
+  </div>
+  
