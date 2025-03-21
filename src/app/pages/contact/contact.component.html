@@ -1,0 +1,62 @@
+<div class="contact-container">
+    <h1 class="contact-title">Contactez-nous</h1>
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="contact-form">
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          placeholder="Votre nom"
+          [(ngModel)]="contact.name"
+          name="name"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          placeholder="Votre email"
+          [(ngModel)]="contact.email"
+          name="email"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          class="form-control"
+          rows="5"
+          placeholder="Votre message"
+          [(ngModel)]="contact.message"
+          name="message"
+          required
+        ></textarea>
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" [disabled]="!contactForm.form.valid" class="submit-btn">
+          Envoyer
+        </button>
+      </div>
+    </form>
+  
+    <div class="location">
+      <p>Visitez-nous à notre bureau :</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.1812323923645!2d2.2922923156747367!3d48.85884427928733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d7d8b59a7d%3A0x44e82ac58c7edb97!2sEiffel%20Tower!5e0!3m2!1sen!2sfr!4v1581473622812!5m2!1sen!2sfr"
+        width="100%"
+        height="250"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+  

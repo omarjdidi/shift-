@@ -1,0 +1,51 @@
+/* Style de la section about */
+.about-section {
+    display: flex;
+    flex-direction: column; /* Empêche la disposition en ligne sur les petits écrans */
+    align-items: center;
+    background-color: white;
+    padding: 3rem 1.5rem; /* Marge intérieure */
+  }
+  
+  .about-section .w-full {
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    /* Sur les écrans de taille moyenne (md) et plus grands, disposition en ligne */
+    .about-section {
+      flex-direction: row;
+    }
+  
+    /* Conteneur de l'image, alignée à gauche sur les écrans larges */
+    .about-section .w-full.md\:w-1\/2 {
+      width: 50%; /* 50% de largeur sur les écrans larges */
+    }
+  
+    /* Contenu aligné à gauche sur les écrans larges */
+    .about-section .w-full.md\:w-1\/2.text-gray-800 {
+      width: 50%; /* 50% de largeur sur les écrans larges */
+      text-align: left; /* Alignement du texte à gauche */
+      padding-left: 2rem;
+    }
+  
+    /* Image de l'agence, toujours à gauche sur les écrans larges */
+    .about-section img {
+      width: 100%;
+      max-width: 100%; /* S'assurer que l'image ne dépasse pas la largeur de son conteneur */
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    /* Aligner les statistiques à droite */
+    .about-section .mt-6.flex.items-center.space-x-4 {
+      justify-content: flex-end; /* Aligne les éléments à droite */
+      width: 100%; /* S'assurer que le conteneur prend toute la largeur disponible */
+    }
+  
+    /* Aligner le texte à droite dans les statistiques */
+    .about-section .mt-6.flex.items-center.space-x-4 div {
+      text-align: right;
+    }
+  }
+  

@@ -1,0 +1,77 @@
+/* Section principale */
+.elementor-section {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+/* Container pour centrer les éléments */
+.elementor-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Portfolio Grid : utiliser flex pour aligner les images horizontalement */
+.elementor-widget-wrap {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne suivante si nécessaire */
+    gap: 20px; /* Espacement augmenté entre les images */
+    justify-content: flex-start; /* Alignement des images à gauche */
+}
+
+/* Style pour chaque image */
+.elementor-widget-wrap img {
+    flex: 0 0 calc(20% - 20px); /* Chaque image prend 20% de la largeur du conteneur avec un espacement de 20px */
+    max-width: 100%; /* Permet à l'image de s'adapter à la largeur de son conteneur */
+    height: 150px; /* Fixe la hauteur de chaque image à 150px */
+    object-fit: cover; /* Couvre le conteneur de manière optimale */
+    border-radius: 8px; /* Facultatif : arrondir les coins des images */
+}
+
+/* Responsive : sur les tablettes, 3 images par ligne */
+@media (max-width: 768px) {
+    .elementor-widget-wrap img {
+        flex: 0 0 calc(33.33% - 20px); /* 3 images par ligne avec un espacement de 20px */
+        height: 120px; /* Diminuer la hauteur sur les tablettes */
+    }
+}
+
+/* Responsive : sur les mobiles, 1 image par ligne */
+@media (max-width: 480px) {
+    .elementor-widget-wrap img {
+        flex: 0 0 100%; /* 1 image par ligne */
+        height: 100px; /* Diminuer encore la hauteur sur les mobiles */
+    }
+}
+
+/* Container pour les images (section alternative) */
+.img {
+    display: flex; /* Utilise flexbox pour aligner les images horizontalement */
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne suivante si nécessaire */
+    gap: 20px; /* Espacement augmenté entre les images */
+    justify-content: flex-start; /* Aligne les images à gauche */
+}
+
+/* Style pour chaque image dans .img */
+.img img {
+    flex: 0 0 calc(20% - 20px); /* Chaque image prend 20% de la largeur du conteneur */
+    max-width: 500%; /* Permet à l'image de s'adapter à la largeur de son conteneur */
+    height: 300px; /* Fixe la hauteur de chaque image à 150px */
+    object-fit: cover; /* Couvre le conteneur de manière optimale */
+    border-radius: 8px; /* Facultatif : arrondir les coins des images */
+}
+
+/* Responsive : sur les tablettes, 3 images par ligne */
+@media (max-width: 768px) {
+    .img img {
+        flex: 0 0 calc(33.33% - 20px); /* 3 images par ligne avec un espacement de 20px */
+        height: 120px; /* Diminuer la hauteur sur les tablettes */
+    }
+}
+
+/* Responsive : sur les mobiles, 1 image par ligne */
+@media (max-width: 480px) {
+    .img img {
+        flex: 0 0 100%; /* 1 image par ligne */
+        height: 100px; /* Diminuer encore la hauteur sur les mobiles */
+    }
+}
